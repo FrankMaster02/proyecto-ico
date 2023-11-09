@@ -6,60 +6,63 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="Unify Admin Panel" />
+		<meta name="keywords" content="Login, Unify Login, Admin, Dashboard, Bootstrap4, Sass, CSS3, HTML5, Responsive Dashboard, Responsive Admin Template, Admin Template, Best Admin Template, Bootstrap Template, Themeforest" />
 		<meta name="author" content="Bootstrap Gallery" />
-		<link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
-		<title>SAF - Login</title>
-		
-		<!-- Common CSS -->
+		<link rel="shortcut icon" href="{{ asset('/_adm/img/logo-de-la-uaemex-svg.ico')}}" />
+		<title>Adm - Login - ICO</title>
+
+        <!-- Common CSS -->
 		<link rel="stylesheet" href="{{ asset('/_adm/css/bootstrap.min.css')}}" />
 		<link rel="stylesheet" href="{{ asset('/_adm/fonts/icomoon/icomoon.css')}}" />
 
 		<!-- Mian and Login css -->
 		<link rel="stylesheet" href="{{ asset('/_adm/css/main.css')}}" />
+
 	</head>  
 
 	<body class="login-bg">
-        <div class="container">
-            <div class="login-screen row align-items-center text-center">
-                <div class="col-lg-12 text-center">
-                    <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                            <div class="login-box">
-                                <div>
-                                    <h1 class="logo-name text-center" style="font-size: 135px;">SAF</h1>
-                                </div>
-                                <h3>Bienvenido al SAF</h3>
-                                <p>
-                                    Servicio Automotriz Flores
-                                </p>
-                                <p>Entra y conócelo.</p>
-                                <form class="m-t" role="form" action="{{route('adm.abrirSesion')}}" method="POST">
-                                    @if(session('msgError'))
-                                    <div class="alert alert-danger alert-dismissable">
-                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                        {{session('msgError')}}
-                                    </div>
-                                    @endif
-                                    <div class="form-group">
-                                        <input name="identidad" type="text" class="form-control" placeholder="identidad" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input name="clave" type="password" class="form-control" placeholder="Clave" required="">
-                                    </div>
-                                    
-                                    
-                                    <button type="submit" class="btn btn-primary block full-width m-b">Entrar</button>
-                                    
-                                    <input type="hidden" name="_token" value="<?= csrf_token(); ?>">
-                                </form>    
-                            </div>
+			
+		<div class="container">
+			<div class="login-screen row align-items-center">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                   <form class="m-t" role="form" action="{{route('adm.abrirSesion')}}" method="POST">
+                        @if(session('msgError'))
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            {{session('msgError')}}
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
+                        @endif
+						<div class="login-container">
+							<div class="row no-gutters">
+								<div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+									<div class="login-box">
+										<a href="#" class="login-logo">
+											<img src="{{asset('/_adm/img/unify.png')}}" alt="Unify Admin Dashboard" />
+										</a>
+                                        <div class="form-group">
+                                            <input name="noCuenta" type="text" class="form-control" placeholder="No. Cuenta" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input name="clave" type="password" class="form-control" placeholder="Clave" required="">
+                                        </div>
+                                                                                
+                                        <input type="hidden" name="_token" value="<?= csrf_token(); ?>">
+										<div class="actions clearfix">
+									  	<button type="submit" class="btn btn-primary">Iniciar</button>
+									  </div>
+									</div>
+								</div>
+								<div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
+									<div class="login-slider"></div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
             var msgs = {};
             
             @if(!is_null(session('msgError')))
@@ -68,5 +71,5 @@
         </script>
         
         <script src="{{asset('_adm/js/login.js')}}"></script>
-	</body> 
+	</body>
 </html>

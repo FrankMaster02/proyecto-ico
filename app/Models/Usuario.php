@@ -13,7 +13,7 @@ class Usuario extends Model
     protected $fillable = [
         'noCuenta',
         'nombre_completo', 'telefono', 
-        'correo_Ins', 'contraseña',
+        'correo_Ins', 'clave',
     ];
 
 }

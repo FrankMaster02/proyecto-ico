@@ -6,3 +6,7 @@ Route::post('/interfaz/mini',       'InterfazController@mini');
 
 Route::post('sesion/abrir',     ['as' => 'adm.abrirSesion',     'uses' => 'SesionController@abrir' ]);
 Route::get ('sesion/cerrar',    ['as' => 'adm.cerrarSesion',    'uses' => 'SesionController@cerrar' ]);
+
+Route::group(['middleware' => ['sesion']], function() {
+
+});
