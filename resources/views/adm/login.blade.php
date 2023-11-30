@@ -54,7 +54,9 @@
 									</div>
 								</div>
 								<div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
-									<div class="login-slider"></div>
+									<div class="">
+										<img src="{{asset('/_adm/img/EspacioU.jpeg')}}" alt="45">
+									</div>
 								</div>
 							</div>
 						</div>

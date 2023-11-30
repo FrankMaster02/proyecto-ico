@@ -9,4 +9,9 @@ Route::get ('sesion/cerrar',    ['as' => 'adm.cerrarSesion',    'uses' => 'Sesio
 
 Route::group(['middleware' => ['sesion']], function() {
 
+    Route::prefix('inicio')->group(function() {
+        Route::get( '/',            ['as' => 'adm.inicio',              'uses' => 'TableroController@inicio']);
+        Route::get('servicios',     ['as' => 'adm.vistaServicios',      'uses' => 'TableroController@verServicios']);
+    });
+
 });

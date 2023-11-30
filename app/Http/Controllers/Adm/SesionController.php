@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 class SesionController extends Controller
 {
     public function abrir(Request $request){
-        $identidad = $request->input('identidad');
+        $noCuenta = $request->input('noCuenta');
         $clave = $request->input('clave');
         
         // Busqueda y carga del usuario
-        $usuario = Usuario::whereRaw(" BINARY identidad = BINARY \"$identidad\"")
+        $usuario = Usuario::whereRaw(" BINARY noCuenta = BINARY \"$noCuenta\"")
         ->where('clave','=', md5($clave))->first();
         
         if($usuario == null){
